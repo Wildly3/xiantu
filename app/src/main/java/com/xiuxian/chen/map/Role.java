@@ -20,7 +20,10 @@ public class Role {
     public boolean isre;
 
     //事件接口
-    public RoleEvent event;
+    public transient RoleEvent event;
+
+    //脚本
+    public String script;
 
     public Role(){}
 }

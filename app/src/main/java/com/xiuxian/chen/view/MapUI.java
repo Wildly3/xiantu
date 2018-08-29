@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -33,9 +34,13 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
     TextView maptitle, info;
 
+    ScrollView infoScrollview;
+
     LinearLayout hereButtonView;
 
     MapTile nowmap;
+
+    Role[] nowroles;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -59,6 +64,7 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
         maptitle = (TextView) findViewById(R.id.map_nowflag);
         info = (TextView) findViewById(R.id.map_info_textview);
+        infoScrollview = (ScrollView) findViewById(R.id.map_info_scrollview);
 
         hereButtonView = (LinearLayout) findViewById(R.id.map_here_button);
 
@@ -92,11 +98,17 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
         hereButtonView.removeAllViews();
 
-        if (nowmap.roles.size() > 0)
-        for (int i = 0, len = nowmap.roles.size();i<len;i++){
-            hereButtonView.addView(CreateButton(RoleManager.ScanRole(nowmap.roles.get(i))));
-        }
+        nowroles = null;
 
+        if (nowmap.roles.size() > 0) {
+            nowroles = new Role[nowmap.roles.size()];
+            for (int i = 0, len = nowmap.roles.size(); i < len; i++) {
+                Role role = RoleManager.ScanRole(nowmap.roles.get(i));
+                if (role == null) continue;
+                nowroles[i] = role;
+                hereButtonView.addView(CreateButton(role));
+            }
+        }
         MapTile road_up = nowmap.getUp();
 
         MapTile road_down = nowmap.getDown();
@@ -170,37 +182,71 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
         boolean isref = false;
 
+        MapTile tile = null;
+
+        int direction = 0;
+
         switch (v.getId()){
             case R.id.map_way_up:
                 if (nowmap.getUp() != null){
                     isref = true;
-                    nowmap = nowmap.getUp();
+                    direction = 0;
+                    tile = nowmap.getUp();
                 }
                 break;
             case R.id.map_way_down:
                 if (nowmap.getDown() != null){
                     isref = true;
-                    nowmap = nowmap.getDown();
+                    direction = 1;
+                    tile = nowmap.getDown();
                 }
                 break;
             case R.id.map_way_left:
                 if (nowmap.getLeft() != null){
                     isref = true;
-                    nowmap = nowmap.getLeft();
+                    direction = 2;
+                    tile = nowmap.getLeft();
                 }
                 break;
             case R.id.map_way_right:
                 if (nowmap.getRight() != null){
                     isref = true;
-                    nowmap = nowmap.getRight();
+                    direction = 3;
+                    tile = nowmap.getRight();
                 }
                 break;
         }
         if (isref) {
-            info.append("你进入了 ");
-            info.append(nowmap.name);
-            info.append("\n");
+
+            boolean blocktw = false;
+
+            int length = nowroles == null ? 0 : nowroles.length;
+
+            if (length > 0)
+            for (int i=0;i<length;i++){
+                Role role = nowroles[i];
+                if (role != null && role.event != null)
+                    if (role.event.BlockTW()[direction] != 0){
+                        blocktw = true;
+                        append(role.name);
+                        append(role.returns == null ? "拦住了你！" : "：" + role.returns);
+                        append("\n");
+                    }
+            }
+
+            if (blocktw) return;
+
+            nowmap = tile;
+            append("你进入了 ");
+            append(nowmap.name);
+            append("\n");
             mapshow();
         }
     }
+
+    void append(String text){
+        info.append(text);
+        infoScrollview.fullScroll(View.FOCUS_DOWN);
+    }
+
 }
