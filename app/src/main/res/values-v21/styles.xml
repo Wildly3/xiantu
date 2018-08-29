@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏-->
+        <item name="colorPrimaryDark">@color/color_background</item>
+        <!--系统中，子空间，复选框，单选按钮，选中时的颜色-->
+        <item name="colorAccent">@color/color_background</item>
+
+        <!--窗体的背景色-->
+        <item name="android:windowBackground">@color/color_background</item>
+
+        <!--窗体无标题栏-->
+        <item name="windowNoTitle">true</item>
+        <!--无actionbar-->
+        <item name="windowActionBar">false</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+</resources>

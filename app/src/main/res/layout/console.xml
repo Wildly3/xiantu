@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ScrollView
+		android:layout_weight="1"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent">
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:id="@+id/consoleTextView1"
+			android:paddingLeft="5dp"
+			android:textColor="@color/color_alltext"/>
+		
+	</ScrollView>
+
+	<EditText
+		android:layout_height="50dp"
+		android:layout_width="fill_parent"
+		android:imeOptions="actionSearch"
+		android:singleLine="true"
+		android:background="@drawable/shape_corner"
+		android:textColor="@color/color_alltext"
+		android:textCursorDrawable="@drawable/cursor_color"
+		android:id="@+id/consoleEditText1"/>
+
+</LinearLayout>
+

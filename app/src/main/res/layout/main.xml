@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	android:id="@android:id/tabhost">
+
+	<RelativeLayout
+		android:background="@color/color_background"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<TabWidget
+			android:id="@android:id/tabs"
+			android:layout_width="fill_parent"
+			android:layout_height="40dp"
+			android:layout_alignParentBottom="true">
+
+		</TabWidget>
+
+		<FrameLayout
+			android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_above="@android:id/tabs"/>
+
+		<LinearLayout
+			android:background="@color/color_background"
+			android:layout_height="40dp"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_alignParentBottom="true"
+			android:gravity="center"
+			android:id="@+id/mainLinearLayout1">
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_weight="1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text=""
+				android:gravity="center"
+				android:background="@drawable/tabbackground"
+				android:layout_marginRight="1dp"/>
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_weight="1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text=""
+				android:gravity="center"
+				android:background="@drawable/tabbackground"
+				android:layout_marginRight="1dp"/>
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_weight="1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text=""
+				android:gravity="center"
+				android:background="@drawable/tabbackground"/>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</TabHost>
+

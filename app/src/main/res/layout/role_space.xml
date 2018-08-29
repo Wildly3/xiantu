@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:id="@+id/rolespaceTextView1"
+		android:textColor="@color/color_alltext"
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/radiutext"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:layout_marginTop="4dp"/>
+
+	<RadioGroup
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:id="@+id/rolespaceRadioGroup1"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true">
+
+		<RadioButton
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:button="@null"
+			android:layout_height="45dp"
+			android:layout_width="wrap_content"
+			android:id="@+id/rolespaceRadioButton1_equip"
+			android:text="装    备"
+			android:background="@drawable/selector"/>
+
+		<RadioButton
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:button="@null"
+			android:layout_height="45dp"
+			android:layout_width="wrap_content"
+			android:id="@+id/rolespaceRadioButton1_consunables"
+			android:text="消耗品"
+			android:background="@drawable/selector"/>
+
+		<RadioButton
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:button="@null"
+			android:layout_height="45dp"
+			android:layout_width="wrap_content"
+			android:id="@+id/rolespaceRadioButton1_materials"
+			android:text="材    料"
+			android:background="@drawable/selector"/>
+
+	</RadioGroup>
+
+	<ListView
+		android:divider="@null"
+		android:dividerHeight="1dp"
+		android:paddingTop="25dp"
+		android:layout_above="@id/rolespaceRadioGroup1"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/rolespaceListView1"
+		android:layout_alignParentTop="true"/>
+
+</RelativeLayout>
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+	
+	<TextView
+		android:textColor="@color/color_alltext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="已装备技能"
+		android:id="@+id/skillTextView1"/>
+
+	<LinearLayout
+		android:layout_below="@id/skillTextView1"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:orientation="horizontal"
+		android:id="@+id/skillLinearLayout1">
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="..."
+			android:layout_weight="1.0"
+			android:id="@+id/skillButton2_skill0"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="..."
+			android:layout_weight="1.0"
+			android:id="@+id/skillButton1_skill1"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="..."
+			android:layout_weight="1.0"
+			android:id="@+id/skillButton1_skill2"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="..."
+			android:layout_weight="1.0"
+			android:id="@+id/skillButton1_skill3"
+			android:background="@drawable/selector_button"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/skillLinearLayout1"
+		android:id="@+id/skillListView1"/>
+
+</RelativeLayout>
+

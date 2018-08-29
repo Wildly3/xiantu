@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="horizontal">
+
+	<TextView
+		android:textColor="@color/color_alltext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:id="@+id/dialognumberopTextView1"
+		android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true"/>
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true">
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="-"
+			android:id="@+id/dialognumberopButton1"
+			android:background="@drawable/selector_button"/>
+
+		<EditText
+			android:textColor="@color/color_alltext"
+			android:gravity="center"
+			android:inputType="number"
+			android:layout_width="wrap_content"
+			android:ems="3"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/dialognumberopButton1"
+			android:background="@drawable/shape_corner"
+			android:id="@+id/dialognumberopEditText1"
+			android:layout_centerVertical="true"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+"
+			android:layout_toRightOf="@id/dialognumberopEditText1"
+			android:id="@+id/dialognumberopButton2"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text=">"
+			android:layout_toRightOf="@id/dialognumberopButton2"
+			android:background="@drawable/selector_button"
+			android:id="@+id/dialognumberopButton3"/>
+
+	</RelativeLayout>
+
+</RelativeLayout>
+

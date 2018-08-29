@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:background="@drawable/shape_corner"
+	android:id="@+id/dialogviewLinearLayout1"
+	android:layout_gravity="center">
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:background="@drawable/shape_corner"
+		android:id="@+id/dialogviewRelativeLayout1">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="信息"
+			android:textSize="16sp"
+			android:id="@+id/title"
+			android:textColor="@color/color_alltext"
+			android:padding="5dp"
+			android:layout_centerHorizontal="true"/>
+
+		<ImageButton
+			android:layout_height="35dp"
+			android:layout_width="45dp"
+			android:layout_alignParentRight="true"
+			android:src="@drawable/ic_mini"
+			android:background="@drawable/selector_button"
+			android:id="@+id/close"
+			android:layout_marginRight="2dp"
+			android:layout_marginTop="2dp"
+			android:layout_marginBottom="2dp"/>
+
+	</RelativeLayout>
+
+	<FrameLayout
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:id="@+id/dialogviewFrameLayout1"
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
+		android:paddingBottom="25dp"
+		android:paddingTop="25dp">
+
+		<ScrollView
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent">
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:textSize="17sp"
+					android:id="@+id/message"
+					android:visibility="gone"
+					android:textColor="@color/color_alltext"
+					android:layout_gravity="center_horizontal"/>
+
+			</LinearLayout>
+
+		</ScrollView>
+
+	</FrameLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:orientation="horizontal">
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:layout_height="40dp"
+			android:layout_width="wrap_content"
+			android:text="取消"
+			android:background="@drawable/selector_button"
+			android:id="@+id/cancel"
+			android:visibility="gone"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:layout_height="40dp"
+			android:layout_width="wrap_content"
+			android:text="确定"
+			android:background="@drawable/selector_button"
+			android:id="@+id/select"
+			android:visibility="gone"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

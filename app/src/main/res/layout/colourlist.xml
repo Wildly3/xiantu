@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:background="@drawable/selector_button">
+
+        <TextView
+            android:id="@+id/colourlistTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/color_alltext"
+            android:gravity="center"/>
+	</LinearLayout>

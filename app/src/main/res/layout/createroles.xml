@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/createroles_group"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/createroles_people"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector"
+            android:button="@null"
+            android:text="人族"
+            android:textColor="@color/people"/>
+
+        <RadioButton
+            android:id="@+id/createroles_beast"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector"
+            android:button="@null"
+            android:text="妖族"
+            android:textColor="@color/beast"/>
+
+        <RadioButton
+            android:id="@+id/createroles_monster"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector"
+            android:button="@null"
+            android:text="魔族"
+            android:textColor="@color/monster"/>
+
+        <RadioButton
+            android:id="@+id/createroles_ghost"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector"
+            android:button="@null"
+            android:text="鬼族"
+            android:textColor="@color/ghost"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/createroles_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_alltext"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="姓名"
+        android:textColor="@color/color_alltext"/>
+
+    <EditText
+        android:paddingLeft="2dp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/shape_corner"
+        android:textColor="@color/color_alltext"
+        android:id="@+id/createroles_edit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+
+    <Button
+        android:textColor="@color/color_alltext"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="创建角色"
+        android:id="@+id/createroles_create"
+        android:background="@drawable/selector_button"/>
+
+</LinearLayout>

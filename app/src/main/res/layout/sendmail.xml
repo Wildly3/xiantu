@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="0dp"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:layout_weight="1.0">
+
+		<TextView
+			android:textColor="@color/color_alltext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="接收人id"/>
+
+		<EditText
+            android:singleLine="true"
+			android:paddingLeft="2dp"
+			android:textCursorDrawable="@drawable/cursor_color"
+			android:background="@drawable/shape_corner"
+			android:textColor="@color/color_alltext"
+			android:layout_height="35dp"
+			android:layout_width="match_parent"
+			android:id="@+id/sendmailEditText1_id"
+			android:inputType="number"/>
+
+		<TextView
+			android:textColor="@color/color_alltext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="邮件内容"/>
+
+		<ScrollView
+			android:layout_weight="0.2"
+			android:layout_height="0dp"
+			android:layout_width="match_parent">
+
+			<EditText
+				android:paddingLeft="2dp"
+				android:textColor="@color/color_alltext"
+				android:background="@drawable/shape_corner"
+				android:textCursorDrawable="@drawable/cursor_color"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:id="@+id/sendmailEditText1_msg"/>
+
+		</ScrollView>
+
+		<com.xiuxian.chen.include.SlideCutListView
+			android:layout_height="0dp"
+			android:layout_width="match_parent"
+			android:id="@+id/sendmailListView1_goods"
+			android:layout_weight="0.5"
+			/>
+
+
+
+	</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_weight="0.3"
+            android:textColor="@color/color_alltext"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="添加邮件物品"
+            android:background="@drawable/selector_button"
+            android:id="@+id/sendmailButton1_addgoods"/>
+
+        <Button
+            android:id="@+id/sendmailButton1_addmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:background="@drawable/selector_button"
+            android:text="添加金币"
+            android:textColor="@color/color_alltext"/>
+
+        <Button
+            android:layout_weight="0.3"
+            android:textColor="@color/color_alltext"
+            android:background="@drawable/selector_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="发送邮件"
+            android:id="@+id/sendmailButton1_send"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center_horizontal"
+		android:background="@drawable/shape_corner">
+
+		<TextView
+			android:textColor="@color/color_alltext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="收件箱"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_height="0dp"
+		android:layout_width="match_parent"
+		android:id="@+id/mailListView1"
+		android:layout_weight="1.0"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+		
+		<Button
+			android:layout_weight="0.5"
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="刷新"
+			android:id="@+id/mailButton1_ref"
+			android:background="@drawable/selector_button"/>
+		
+		<Button
+			android:layout_weight="0.5"
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="发邮件"
+			android:id="@+id/mailButton1_send"
+			android:background="@drawable/selector_button"/>
+		
+	</LinearLayout>
+		
+	
+
+</LinearLayout>
+

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	>
+
+	<com.xiuxian.chen.view.MapView
+		android:layout_weight="2"
+		android:layout_width="fill_parent"
+		android:layout_height="300dp"
+		android:id="@+id/mapMapView1"/>
+
+	<RelativeLayout
+		android:background="@drawable/shape_corner"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_gravity="center">
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="↑"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/mapButton1_up"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="●"
+			android:layout_below="@id/mapButton1_up"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/mapButton2_ok"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="↓"
+			android:layout_below="@id/mapButton2_ok"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/mapButton1_down"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="←"
+			android:layout_toLeftOf="@id/mapButton2_ok"
+			android:layout_centerVertical="true"
+			android:id="@+id/mapButton1_left"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="→"
+			android:layout_toRightOf="@id/mapButton2_ok"
+			android:layout_centerVertical="true"
+			android:id="@+id/mapButton1_right"
+			android:background="@drawable/selector_button"/>
+
+		<ScrollView
+			android:scrollbars="none"
+			android:layout_height="100dp"
+			android:layout_width="100dp">
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:id="@+id/mapTextView1_pos"/>
+
+		</ScrollView>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:visibility="gone"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="攻击"
+			android:id="@+id/mapButton1_attack"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:visibility="gone"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:text="..."
+			android:layout_toRightOf="@id/mapButton1_attack"
+			android:id="@+id/mapButton1_skill1"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:visibility="gone"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:text="..."
+			android:layout_toRightOf="@id/mapButton1_skill1"
+			android:id="@+id/mapButton1_skill2"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:visibility="gone"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:text="..."
+			android:layout_toRightOf="@id/mapButton1_skill2"
+			android:id="@+id/mapButton1_skill3"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:visibility="gone"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:text="空间"
+			android:layout_below="@id/mapButton1_attack"
+			android:id="@+id/mapButton1_space"
+			android:background="@drawable/selector_button"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_toRightOf="@id/mapButton1_space"
+			android:visibility="gone"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:text="逃跑"
+			android:layout_below="@id/mapButton1_skill1"
+			android:id="@+id/mapButton1_escape"
+			android:background="@drawable/selector_button"/>
+
+	</RelativeLayout>
+
+</LinearLayout>
+

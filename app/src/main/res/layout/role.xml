@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<Button
+		android:textColor="@color/color_alltext"
+		android:layout_height="65dp"
+		android:layout_width="fill_parent"
+		android:text="状态"
+		android:id="@+id/roleButton1_attr"
+		android:background="@drawable/selector_button"
+		android:layout_weight="1.0"
+		android:layout_marginTop="2dp"/>
+
+	<Button
+		android:textColor="@color/color_alltext"
+		android:layout_weight="0.8"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="技能"
+		android:id="@+id/roleButton1_kill"
+		android:background="@drawable/selector_button"
+		android:layout_marginBottom="1dp"
+		android:layout_marginTop="1dp"/>
+
+	<Button
+		android:textColor="@color/color_alltext"
+		android:layout_weight="0.8"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="空间"
+		android:id="@+id/roleButton1_space"
+		android:layout_marginBottom="1dp"
+		android:background="@drawable/selector_button"/>
+
+	<Button
+		android:textColor="@color/color_alltext"
+		android:layout_weight="0.8"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="任务"
+		android:background="@drawable/selector_button"
+		android:id="@+id/roleButton1_task"/>
+
+</LinearLayout>
+

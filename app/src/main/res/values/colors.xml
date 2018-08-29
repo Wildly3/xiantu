@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+
+    <color name="colorPrimaryDark">#303F9F</color>
+
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="people">#ffffff</color>
+
+    <color name="beast">#ff0000</color>
+
+    <color name="monster">#a300c7</color>
+
+    <color name="ghost">#00e62e</color>
+
+	<color name="atk">#FF4040</color>
+	<color name="def">#B39512</color>
+	<color name="speed">#40C4FF</color>
+	<color name="luck">#FF9340</color>
+	<color name="exp">#40FF84</color>
+	<color name="health">#FF4081</color>
+	<color name="mp">#3F51B5</color>
+
+    <color name="metal">#ffff00</color>
+    <color name="wood">#00ff37</color>
+    <color name="water">#69b5eb</color>
+    <color name="fire">#cf4c00</color>
+    <color name="soil">#deac59</color>
+	
+	<color name="weapon">#FF4040</color>
+	<color name="head">#A540FF</color>
+	<color name="gloves">#FF8900</color>
+	<color name="shoes">#409CFF</color>
+	<color name="clothes">#4048FF</color>
+	<color name="necklace">#AFB53F</color>
+	<color name="earrings">#F8F8F8</color>
+	
+	<color name="color_background">#000000</color>
+	
+	<color name="color_line">#ffffff</color>
+	
+	<color name="color_background_f">#5E5E5E</color>
+
+	<color name="color_line_f">#ffffff</color>
+	
+	<color name="color_alltext">#ffffff</color>
+	
+</resources>

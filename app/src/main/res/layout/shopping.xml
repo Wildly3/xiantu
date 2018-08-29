@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:background="@drawable/shape_corner">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:id="@+id/shoppingTextView1_myid"
+			android:textColor="@color/color_alltext"/>
+
+	</LinearLayout>
+
+	<EditText
+		android:textCursorDrawable="@drawable/cursor_color"
+		android:imeOptions="actionSearch"
+		android:singleLine="true"
+		android:background="@drawable/shape_corner"
+		android:textColor="@color/color_alltext"
+		android:layout_height="45dp"
+		android:layout_width="match_parent"
+		android:id="@+id/shoppingEditText1_search"
+		android:hint="搜索"
+		android:paddingLeft="2dp"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<Spinner
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/shoppingSpinner1_type"
+			android:layout_weight="1.0"/>
+
+		<Button
+			android:textColor="@color/color_alltext"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="寄卖"
+			android:id="@+id/shoppingButton1_shelf"
+			android:background="@drawable/selector_button"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/shoppingListView1_list"/>
+
+</LinearLayout>
+

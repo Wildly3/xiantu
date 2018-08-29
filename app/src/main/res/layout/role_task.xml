@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<TextView
+		android:textColor="@color/color_alltext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="任务"
+		android:layout_gravity="center_horizontal"/>
+
+	<ListView
+		android:layout_weight="1"
+		android:divider="@null"
+		android:dividerHeight="1dp"
+		android:paddingTop="5dp"
+		android:layout_height="0dp"
+		android:layout_width="fill_parent"
+		android:layout_alignParentTop="true"
+		android:id="@+id/roletaskListView1"/>
+
+	<RadioGroup
+		android:layout_weight="0"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true"
+		android:id="@+id/roletaskRadioGroup1">
+
+		<RadioButton
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:button="@null"
+			android:layout_height="45dp"
+			android:layout_width="wrap_content"
+			android:text="进行中"
+			android:background="@drawable/selector"
+			android:id="@+id/roletaskRadioButton1"/>
+
+		<RadioButton
+			android:textColor="@color/color_alltext"
+			android:layout_weight="1"
+			android:button="@null"
+			android:layout_height="45dp"
+			android:layout_width="wrap_content"
+			android:text="可进行"
+			android:background="@drawable/selector"
+			android:id="@+id/roletaskRadioButton2"/>
+
+	</RadioGroup>
+
+</LinearLayout>
+

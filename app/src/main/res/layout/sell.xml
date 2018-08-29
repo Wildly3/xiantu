@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:background="@drawable/shape_corner"
+        android:orientation="vertical"
+        tools:gravity="center">
+
+        <TextView
+            android:textSize="@dimen/all_textsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我上架的物品"
+            android:textColor="@color/color_alltext"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/SellUI_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/SellUI_ref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@drawable/selector_button"
+            android:text="刷新"
+            android:textColor="@color/color_alltext"/>
+
+        <Button
+            android:id="@+id/SellUI_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@drawable/selector_button"
+            android:text="上架"
+            android:textColor="@color/color_alltext"/>
+
+    </LinearLayout>
+
+</LinearLayout>

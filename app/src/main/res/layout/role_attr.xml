@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+    <ScrollView
+        android:id="@+id/role_attr_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.xiuxian.chen.include.AllLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/roleattrTextView1"
+            android:background="@drawable/shape_corner"
+            android:layout_marginTop="2dp"/>
+
+    </ScrollView>
+
+
+
+	<HorizontalScrollView
+		android:scrollbars="none"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/role_attr_ScrollView"
+		android:id="@+id/roleattrHorizontalScrollView1"
+		android:layout_marginTop="2dp">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="武器"
+				android:id="@+id/roleattrButton2_weapon"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/weapon"
+				/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="头部"
+				android:id="@+id/roleattrButton2_head"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/head"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="耳环"
+				android:id="@+id/roleattrButton2_earrings"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/earrings"
+				/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="项链"
+				android:id="@+id/roleattrButton2_necklace"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/necklace"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="衣服"
+				android:id="@+id/roleattrButton2_clothes"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/clothes"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="手套"
+				android:id="@+id/roleattrButton2_gloves"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/gloves"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="鞋子"
+				android:id="@+id/roleattrButton2_shoes"
+				android:background="@drawable/selector_button"
+				android:textColor="@color/shoes"
+				/>
+
+		</LinearLayout>
+
+	</HorizontalScrollView>
+
+	<TextView
+		android:textColor="@color/color_alltext"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_below="@id/roleattrHorizontalScrollView1"
+		android:id="@+id/roleattrTextView2_attr"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal"
+		android:layout_below="@id/roleattrTextView2_attr">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+体力"
+			android:id="@+id/roleattrButton2_ppower"
+			android:background="@drawable/selector_button"
+			android:textColor="@color/health"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+灵力"
+			android:id="@+id/roleattrButton2_power"
+			android:background="@drawable/selector_button"
+			android:textColor="@color/mp"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+抵抗"
+			android:id="@+id/roleattrButton2_def"
+			android:background="@drawable/selector_button"
+			android:textColor="@color/def"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="+速度"
+			android:id="@+id/roleattrButton2_speed"
+			android:background="@drawable/selector_button"
+			android:textColor="@color/speed"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

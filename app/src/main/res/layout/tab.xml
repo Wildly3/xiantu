@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/shape_corner">
+
+	<RelativeLayout
+		android:layout_height="35dp"
+		android:layout_width="fill_parent"
+		android:orientation="horizontal"
+		android:background="@drawable/shape_corner"
+		android:paddingRight="25dp">
+
+		<ImageButton
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_height="fill_parent"
+			android:layout_width="wrap_content"
+			android:src="@drawable/ic_back"
+			android:id="@+id/tabImageButton1_close"
+			android:background="@drawable/selector_button"/>
+
+		<LinearLayout
+			android:layout_height="fill_parent"
+			android:layout_width="wrap_content"
+			android:orientation="horizontal"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true">
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_gravity="center_vertical"
+				android:id="@+id/tabTextView1_title"
+				android:background="@drawable/radiutext"
+				android:paddingLeft="5dp"
+				android:paddingRight="5dp"/>
+
+			<TextView
+				android:textColor="@color/color_alltext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_gravity="center_vertical"
+				android:id="@+id/tabTextView1_title2"
+				android:background="@drawable/radiutext"
+				android:paddingLeft="5dp"
+				android:paddingRight="5dp"/>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+	<FrameLayout
+		android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:id="@+id/tabFrameLayout1"/>
+
+</LinearLayout>
+
