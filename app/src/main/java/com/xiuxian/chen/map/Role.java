@@ -13,6 +13,9 @@ public class Role {
     //简介
     public String explain;
 
+    //实体名称
+    public String entity;
+
     //当阻挡阻挡通过时，返回的信息
     public String returns;
 
@@ -24,6 +27,4 @@ public class Role {
 
     //脚本
     public String script;
-
-    public Role(){}
 }

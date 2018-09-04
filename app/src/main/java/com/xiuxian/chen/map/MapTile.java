@@ -20,6 +20,8 @@ public final class MapTile {
 
     public String id;
 
+    public String explain;
+
     public transient MapTile[] around;
 
     public String[] aroundID;

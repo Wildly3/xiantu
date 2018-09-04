@@ -14,7 +14,11 @@ import java.util.Set;
 public final class Map {
     public String name;
 
+    public String id;
+
     private MapTile[] tiles;
+
+    private String nowid;
 
     public Map(){}
 
@@ -26,11 +30,21 @@ public final class Map {
         this.name = name;
     }
 
+    public String getNowid() {
+        return nowid;
+    }
+
+    public void setNowid(String nowid) {
+        this.nowid = nowid;
+    }
+
     /** 将tile转换为数组
      * @param tile 要转换得tile
      */
     public void toList(MapTile tile){
         if (tile == null) return;
+
+        this.nowid = tile.id;
 
         Set<MapTile> arr = tile.toList();
 
@@ -42,9 +56,7 @@ public final class Map {
 
         while (iterator.hasNext()){
             MapTile t = iterator.next();
-
             tiles[i] = t;
-
             i++;
         }
     }
@@ -74,7 +86,6 @@ public final class Map {
                 }
             }
         }
-
         return tile;
     }
 
@@ -95,5 +106,12 @@ public final class Map {
         return tile;
     }
 
+    public MapTile nowMap(){
+        return FindTile(this.nowid);
+    }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
