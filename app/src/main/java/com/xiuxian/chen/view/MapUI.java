@@ -1,11 +1,15 @@
 package com.xiuxian.chen.view;
 
+import android.animation.Animator;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -13,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.xiuxian.chen.MainActivity;
 import com.xiuxian.chen.R;
+import com.xiuxian.chen.map.AssetsManager;
 import com.xiuxian.chen.map.Map;
 import com.xiuxian.chen.map.MapTile;
 import com.xiuxian.chen.map.Role;
@@ -28,7 +33,23 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "MapUI";
 
+    //地图移动速度
+    static int MOVE_MAINATION_SPEED = 400;
+
+    final int[] backID = {
+            R.id.map_way_up_back,
+            R.id.map_way_down_back,
+            R.id.map_way_left_back,
+            R.id.map_way_right_back
+    };
+
     Button center, up, down, left, right;
+
+    RelativeLayout directUp;
+
+    RelativeLayout directDown;
+
+    Button[] directBack;
 
     TextView line_up, line_down, line_left, line_right;
 
@@ -68,27 +89,46 @@ public class MapUI extends Fragment implements View.OnClickListener {
 
         hereButtonView = (LinearLayout) findViewById(R.id.map_here_button);
 
+        directUp = (RelativeLayout) findViewById(R.id.map_direct_view_up);
+
+        directDown = (RelativeLayout) findViewById(R.id.map_direct_view_down);
+
+        directBack = new Button[backID.length];
+
+        for (int i=0;i<backID.length;i++){
+            Button btn = (Button) findViewById(backID[i]);
+            directBack[i] = btn;
+        }
+
         center.setClickable(false);
 
         mapinit();
     }
 
     void mapinit(){
-        MapTile main = new MapTile("新宿村");
+        Map map = AssetsManager.LoadMap("123");
 
-        main.addRole("111");
+        if (map != null){
+            MapTile tile = map.toTile().FindIDTile(map.getNowid());
+            nowmap = tile;
+        } else {
+            MapTile main = new MapTile("新宿村");
 
-        main.setUp(new MapTile("后山"));
+            main.addRole("111");
 
-        main.setLeft(new MapTile("转职殿"));
+            main.setUp(new MapTile("后山"));
 
-        main.setRight(new MapTile("试炼场"));
+            main.setLeft(new MapTile("转职殿"));
 
-        main.setDown(new MapTile("新宿村外"))
-                .setDown(new MapTile("河边"))
-                .setRight(new MapTile("木桥"));
+            main.setRight(new MapTile("试炼场"));
 
-        nowmap = main;
+            main.setDown(new MapTile("新宿村外"))
+                    .setDown(new MapTile("河边"))
+                    .setRight(new MapTile("木桥"));
+
+            nowmap = main;
+        }
+
 
         mapshow();
     }
@@ -177,6 +217,8 @@ public class MapUI extends Fragment implements View.OnClickListener {
         return btn;
     }
 
+    Button click;
+
     @Override
     public void onClick(View v) {
 
@@ -192,6 +234,8 @@ public class MapUI extends Fragment implements View.OnClickListener {
                     isref = true;
                     direction = 0;
                     tile = nowmap.getUp();
+                    directDown.setTranslationY(-(up.getHeight() + MainActivity.DP * 10));
+                    tran(0, (up.getHeight() + MainActivity.DP * 10));
                 }
                 break;
             case R.id.map_way_down:
@@ -199,6 +243,8 @@ public class MapUI extends Fragment implements View.OnClickListener {
                     isref = true;
                     direction = 1;
                     tile = nowmap.getDown();
+                    directDown.setTranslationY((up.getHeight() + MainActivity.DP * 10));
+                    tran(0, -(up.getHeight() + MainActivity.DP * 10));
                 }
                 break;
             case R.id.map_way_left:
@@ -206,6 +252,8 @@ public class MapUI extends Fragment implements View.OnClickListener {
                     isref = true;
                     direction = 2;
                     tile = nowmap.getLeft();
+                    directDown.setTranslationX(-(up.getWidth() + MainActivity.DP * 10));
+                    tran(up.getWidth() + MainActivity.DP * 10, 0);
                 }
                 break;
             case R.id.map_way_right:
@@ -213,9 +261,22 @@ public class MapUI extends Fragment implements View.OnClickListener {
                     isref = true;
                     direction = 3;
                     tile = nowmap.getRight();
+                    directDown.setTranslationX((up.getWidth() + MainActivity.DP * 10));
+                    tran(-(up.getWidth() + MainActivity.DP * 10), 0);
                 }
                 break;
         }
+
+        click = (Button)v;
+
+        for (int i=0;i<4;i++){
+            MapTile t = tile.around[i];
+            if (t != null && !t.equals(nowmap)){
+                directBack[i].setVisibility(View.VISIBLE);
+                directBack[i].setText(t.name);
+            }
+        }
+
         if (isref) {
 
             boolean blocktw = false;
@@ -240,8 +301,58 @@ public class MapUI extends Fragment implements View.OnClickListener {
             append("你进入了 ");
             append(nowmap.name);
             append("\n");
-            mapshow();
         }
+    }
+
+    void tran(final float x, final float y){
+        directUp.post(new Runnable() {
+            @Override
+            public void run() {
+                click.setPressed(true);
+                center.setPressed(true);
+                ViewPropertyAnimator animator = directUp.animate();
+                if (x != 0) animator.translationX(x);
+                if (y != 0) animator.translationY(y);
+                animator.setDuration(MOVE_MAINATION_SPEED);
+                animator.setListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {}
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        if (x != 0) directUp.setTranslationX(0);
+                        if (y != 0) directUp.setTranslationY(0);
+                        click.setPressed(false);
+                        center.setPressed(false);
+                        mapshow();
+                    }
+                    @Override
+                    public void onAnimationCancel(Animator animation) {}
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {}
+                });
+
+
+                ViewPropertyAnimator animator2 = directDown.animate();
+                if (x != 0) animator2.translationX(0);
+                if (y != 0) animator2.translationY(0);
+                animator2.setDuration(MOVE_MAINATION_SPEED);
+                animator2.setListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {}
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        for (Button btn : directBack){
+                            btn.setPressed(false);
+                            btn.setVisibility(View.INVISIBLE);
+                        }
+                    }
+                    @Override
+                    public void onAnimationCancel(Animator animation) {}
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {}
+                });
+            }
+        });
     }
 
     void append(String text){

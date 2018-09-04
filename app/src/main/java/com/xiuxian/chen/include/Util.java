@@ -59,6 +59,60 @@ public final class Util
 		}
 	}
 
+    public static void WriteStringFile(String filename, String data){
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(filename);
+            fos.write(data.getBytes("utf-8"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (fos != null)
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
+    public static String ReadStringFile(String filename){
+        String result = null;
+
+        InputStreamReader read = null;
+
+        try {
+            read = new InputStreamReader(new FileInputStream(filename), "utf-8");
+
+            BufferedReader br = new BufferedReader(read);
+
+            StringBuilder sb = new StringBuilder("");
+
+            String temp = null;
+
+            while ((temp = br.readLine()) != null){
+                sb.append(temp);
+            }
+
+            result = sb.toString();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            if (read != null)
+                try {
+                    read.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+
+        return result;
+    }
+
 	//几率（千分之）
     public static boolean odds(float o){
         int a=(new Random().nextInt(1000));
