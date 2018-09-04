@@ -143,7 +143,7 @@ public class MapUI extends Fragment implements View.OnClickListener {
         if (nowmap.roles.size() > 0) {
             nowroles = new Role[nowmap.roles.size()];
             for (int i = 0, len = nowmap.roles.size(); i < len; i++) {
-                Role role = RoleManager.ScanRole(nowmap.roles.get(i));
+                Role role = AssetsManager.LoadRole(nowmap.roles.get(i));
                 if (role == null) continue;
                 nowroles[i] = role;
                 hereButtonView.addView(CreateButton(role));
